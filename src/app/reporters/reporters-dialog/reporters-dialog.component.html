@@ -1,0 +1,11 @@
+<ng-container *transloco="let translate">
+  <h1 mat-dialog-title>{{translate('repDetails')}}</h1>
+
+  <app-reporters-details [reporter]="data.reporter" [headers]="data.headers" style="font-size: large;">
+  </app-reporters-details>
+
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button mat-dialog-close color="accent">{{translate('exit')}}</button>
+  </mat-dialog-actions>
+
+</ng-container>

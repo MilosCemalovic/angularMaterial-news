@@ -1,0 +1,43 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" *transloco="let translate">
+  <div class="desktop">
+    <button mat-button *ngFor="let navLink of navLinks" [routerLink]="navLink.route">
+      <mat-icon>{{navLink.icon}}</mat-icon>
+      {{translate(navLink.label)}}
+    </button>
+  </div>
+
+  <div class="desktop">
+    <button mat-button [matMenuTriggerFor]="menu" color="primary">
+      {{translate(activeLang)}}
+    </button>
+    <mat-menu #menu="matMenu">
+      <button *ngFor="let language of languages" mat-menu-item (click)="changeLang(language)">
+        {{translate(language)}}
+      </button>
+    </mat-menu>
+  </div>
+
+  <button mat-icon-button [matMenuTriggerFor]="mobileMenu" class="mobile">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #mobileMenu="matMenu">
+    <button *ngFor="let navLink of navLinks" mat-menu-item [routerLink]="navLink.route">
+      <mat-icon>{{navLink.icon}}</mat-icon>
+      {{translate(navLink.label)}}
+    </button>
+
+    <button mat-menu-item [matMenuTriggerFor]="mobileLangMenu" color="primary">
+      <mat-icon>flag</mat-icon>
+      {{translate(activeLang)}}
+    </button>
+  </mat-menu>
+
+  <mat-menu #mobileLangMenu="matMenu">
+    <button *ngFor="let language of languages" mat-menu-item (click)="changeLang(language)">
+      {{translate(language)}}
+    </button>
+  </mat-menu>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

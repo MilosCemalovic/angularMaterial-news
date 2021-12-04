@@ -1,0 +1,48 @@
+.eleme-cent {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.table-wrapper {
+  position: relative;
+  max-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+
+  table {
+    width: 100%;
+
+    .mat-row {
+      cursor: pointer;
+
+      &:hover {
+        background-color: whitesmoke;
+      }
+    }
+
+    th,
+    td {
+
+      &:not(:last-child) {
+        border-right: 1px solid #f1f1f1;
+      }
+
+      &:not(:first-child) {
+        padding-left: 25px;
+      }
+    }
+  }
+}
+
+mat-expansion-panel {
+  margin-bottom: 10px;
+
+  mat-panel-description {
+    justify-content: end;
+  }
+}
+
+// .card {
+//   width: 260px;
+//   margin: 10px;
+// }

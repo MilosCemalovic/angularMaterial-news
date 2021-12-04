@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="space-between">
+
+  <div>
+    <p class="headers" *ngFor="let header of headers"> {{header |transloco}} </p>
+  </div>
+
+  <div class="reporter-details">
+    <p> {{reporter.phone}} </p>
+    <p> {{reporter.email}} </p>
+    <p> {{reporter.address.city}} </p>
+    <p> {{reporter.address.street}} </p>
+    <p> {{reporter.address.suite}} </p>
+    <p> {{reporter.address.zipcode}} </p>
+    <p> {{reporter.address.geo.lat}} </p>
+    <p> {{reporter.address.geo.lng}} </p>
+    <p> {{reporter.company.name}} </p>
+    <p> {{reporter.company.bs}} </p>
+    <p> {{reporter.company.catchPhrase}} </p>
+  </div>
+
+</div>
