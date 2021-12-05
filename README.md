@@ -4,19 +4,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Run the project
 
-Run `npm i` to install packages
+- Run `npm i` to install packages
 
 ## Development server
 
-Run `ng s` for a dev server
-Navigate to `http://localhost:4200/`
+- Run `ng s` for a dev server
+- Navigate to `http://localhost:4200/`
 
 ## Build
 
-Run `ng build` to build the project
-The build artifacts will be stored in the `dist/` directory
-Use the `--configuration production` flag for a production build
-The `--prod` flag is deprecated, and we must now use `--configuration production` flag
+- Run `ng build` to build the project
+- The build artifacts will be stored in the `dist/` directory
+- Use the `--configuration production` flag for a production build
+- The `--prod` flag is deprecated, and we must now use `--configuration production` flag
 
 ## Description
 
@@ -30,9 +30,7 @@ The `--prod` flag is deprecated, and we must now use `--configuration production
 - User can switch between English and Serbian laguage via Angular Material Menu
 - User can translate content via Transloco Service
 
-## Project APIs
-
-Project is using APIs from:
+## Project is using APIs from
 
 - `https://mediastack.com/`
 - `https://jsonplaceholder.typicode.com/`
