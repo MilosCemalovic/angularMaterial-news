@@ -21,7 +21,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - User is able to search articles by keywords
 - User can translate content between English and Serbian laguage
 - Mediastack API news articles contain: title, description, author, date of publish, image (if has one) and URL to original post. On link click opens original article in new window.
-- Mediastack articles are filtered
+- Mediastack articles are filtered and displayed via Card
 - JSONPlaceholder API is displayed via Table & Dialog on large screens and Expansion Panel on mobile screens
 
 ## Project APIs
