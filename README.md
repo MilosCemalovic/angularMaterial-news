@@ -16,13 +16,15 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Description
 
-- User is redirected to Mediastack API news
-- User is able to switch between 2 news categories (Technology and Serbian)
-- User is able to search articles by keywords
-- User can translate content between English and Serbian laguage
-- Mediastack API news articles contain: title, description, author, date of publish, image (if has one) and URL to original post. On link click opens original article in new window.
-- Mediastack articles are filtered and displayed via Card
-- JSONPlaceholder API is displayed via Table & Dialog on large screens and Expansion Panel on mobile screens
+- User is getting data from Mediastack API and JSONPlaceholder API
+- Navigation is displayed via Angular Material Toolbar
+- User is able to switch between 2 News (Mediastack) categories via Angular Material Tabs
+- News are filtered and displayed via Angular Material Card
+- User can view Reporters (JSONPlaceholder) via Angular Material Table & Dialog on large screens and it's details via Angular Material Expansion Panel on mobile screens
+- User is able to search articles by keywords via Ng2 Search Filter
+- User can switch between English and Serbian laguage via Angular Material Menu
+- User can translate content via Transloco Service
+- News articles contain: title, description, author, date of publish, image (if has one) and URL to original post. On link click opens original article in new window
 
 ## Project APIs
 
@@ -42,15 +44,15 @@ Project is using APIs from:
 ## Installed Angular Material components
 
 - Toolbar
-- Button
-- Icon
-- Card
-- Progress spinner
 - Tabs
-- Input
 - Table
 - Dialog
 - Menu
 - Expansion Panel
+- Progress spinner
+- Input
+- Button
+- Icon
+- Card
 
-## I have the same project in PrimeNG on this GitHub account
+## There is the same project in PrimeNG on this GitHub account
