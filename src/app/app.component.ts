@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   activeLang = 'en'
 
   navLinks: NavLink[] = [
-    { id: 'news', label: 'news', route: ['news'], icon: 'language' },
+    { id: 'news', label: 'news', route: ['news'], icon: 'newspaper' },
     { id: 'reporters', label: 'reporters', route: ['reporters'], icon: 'people' }
   ]
 
