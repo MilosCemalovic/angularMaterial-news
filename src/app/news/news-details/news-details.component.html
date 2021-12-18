@@ -1,20 +1,20 @@
 <ng-container *transloco="let translate">
   <div fxLayout="row" fxLayoutAlign="center center">
-    <mat-form-field class="search-field">
+    <mat-form-field class="mt-md">
       <input matInput type="text" [(ngModel)]="term" placeholder="{{translate('search')}}">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-    <button class="arrow-btn" mat-flat-button color="primary" (click)="sortAsc()">
+    <button class="ml-md" mat-flat-button color="primary" (click)="sortAsc()">
       <mat-icon>arrow_upward</mat-icon>
     </button>
-    <button class="arrow-btn" mat-flat-button color="primary" (click)="sortDesc()">
+    <button class="ml-md" mat-flat-button color="primary" (click)="sortDesc()">
       <mat-icon>arrow_downward</mat-icon>
     </button>
   </div>
 
   <div fxLayout="row wrap" fxLayoutAlign="center">
 
-    <mat-card *ngFor="let article of articles | filter:term" class="card" fxLayout="column"
+    <mat-card *ngFor="let article of articles | filter:term" class="card m-lg" fxLayout="column"
       fxLayoutAlign="space-between">
 
       <img *ngIf="article.image" mat-card-image [src]="article.image" [alt]="article.title">
@@ -26,7 +26,7 @@
       </mat-card-content>
 
       <div fxLayout="row" fxLayoutAlign="space-between center">
-        <p class="published">{{article.published_at | date: 'dd. MMM. HH:mm'}}</p>
+        <p class="m-0">{{article.published_at | date: 'dd. MMM. HH:mm'}}</p>
         <a mat-stroked-button color="primary" [href]="article.url" target="_blank">{{translate('viewArticle')}}</a>
       </div>
 

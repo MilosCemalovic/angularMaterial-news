@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: () => import('./reporters/reporters.module').then(m => m.ReportersModule)
   },
   {
+    path: 'flights',
+    loadChildren: () => import('./flights/flights.module').then(m => m.FlightsModule)
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

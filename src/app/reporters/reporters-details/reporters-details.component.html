@@ -1,21 +1,27 @@
-<div fxLayout="row" fxLayoutAlign="space-between">
+<ng-container *transloco="let translate">
+  <h1 mat-dialog-title>{{translate('repDetails')}}</h1>
 
-  <div>
-    <p class="headers" *ngFor="let header of headers"> {{header |transloco}} </p>
+  <div *ngIf="!loading" fxLayout="row" fxLayoutAlign="space-between">
+
+    <div>
+      <p class="bold" *ngFor="let heading of headings"> {{translate(heading)}} </p>
+    </div>
+
+    <div class="text-right">
+      <p> {{reporter.phone}} </p>
+      <p> {{reporter.email}} </p>
+      <p> {{reporter.address.city}} </p>
+      <p> {{reporter.address.street}} </p>
+      <p> {{reporter.address.suite}} </p>
+      <p> {{reporter.address.zipcode}} </p>
+      <p> {{reporter.address.geo.lat}} </p>
+      <p> {{reporter.address.geo.lng}} </p>
+      <p> {{reporter.company.name}} </p>
+      <p> {{reporter.company.bs}} </p>
+      <p> {{reporter.company.catchPhrase}} </p>
+    </div>
+
   </div>
+</ng-container>
 
-  <div class="reporter-details">
-    <p> {{reporter.phone}} </p>
-    <p> {{reporter.email}} </p>
-    <p> {{reporter.address.city}} </p>
-    <p> {{reporter.address.street}} </p>
-    <p> {{reporter.address.suite}} </p>
-    <p> {{reporter.address.zipcode}} </p>
-    <p> {{reporter.address.geo.lat}} </p>
-    <p> {{reporter.address.geo.lng}} </p>
-    <p> {{reporter.company.name}} </p>
-    <p> {{reporter.company.bs}} </p>
-    <p> {{reporter.company.catchPhrase}} </p>
-  </div>
-
-</div>
+<mat-spinner *ngIf="loading"></mat-spinner>

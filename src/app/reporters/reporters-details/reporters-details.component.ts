@@ -8,7 +8,8 @@ import { Reporter } from './../../interfaces/reporter'
 })
 export class ReportersDetailsComponent {
 
-  @Input() headers: string[]
+  @Input() headings: string[]
   @Input() reporter: Reporter
+  @Input() loading
 
 }

@@ -51,10 +51,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Dialog
 - Menu
 - Expansion Panel
+- Selection List
+- Sidenav
+- Clipboard
+- Card
+- Slide toggle
 - Progress spinner
 - Input
 - Button
 - Icon
-- Card
 
 ## There is the same project in PrimeNG on this GitHub account

@@ -9,10 +9,7 @@ import { NewsComponent } from './news/news.component'
 import { HttpClientModule } from '@angular/common/http'
 import { TechnologyComponent } from './news/technology/technology.component'
 import { SerbianComponent } from './news/serbian/serbian.component'
-import { Ng2SearchPipeModule } from 'ng2-search-filter'
-import { FormsModule } from '@angular/forms'
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TranslocoRootModule } from './transloco-root.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 import { NewsDetailsComponent } from './news/news-details/news-details.component'
 
 @NgModule({
@@ -25,14 +22,12 @@ import { NewsDetailsComponent } from './news/news-details/news-details.component
     NewsDetailsComponent
   ],
   imports: [
+    AngularMaterialModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AngularMaterialModule,
-    FormsModule,
-    Ng2SearchPipeModule,
-    TranslocoRootModule
+    // TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]

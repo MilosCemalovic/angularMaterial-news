@@ -1,20 +1,34 @@
 <ng-container *transloco="let translate">
-  <h2 class="eleme-cent">{{translate('reporters')}}</h2>
-  <div class="table-wrapper mat-elevation-z2 desktop">
-    <table mat-table [dataSource]="reporters">
+  <h2 class="m-lg text-center">{{translate('reporters')}}</h2>
 
-      <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
-        <th mat-header-cell *matHeaderCellDef> {{translate(column)}} </th>
-        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-      </ng-container>
+  <div class="desktop">
+    <button mat-flat-button color="primary" class="m-md">
+      <mat-slide-toggle [(ngModel)]="isChecked" class="mr-sm">Pop-up</mat-slide-toggle>
+      <mat-icon>{{isChecked ? 'thumb_up_alt' : 'thumb_down_alt'}}</mat-icon>
+    </button>
 
-      <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: columnsToDisplay;" (click)="onClick(row)"></tr>
-    </table>
+    <div *ngIf="!loading" class="table-wrapper mat-elevation-z2">
+
+      <table mat-table [dataSource]="reporters">
+
+        <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+          <th mat-header-cell *matHeaderCellDef> {{translate(column)}} </th>
+          <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;" (click)="onClick(row)" class="cursor-pointer"></tr>
+      </table>
+    </div>
+
+    <div *ngIf="!isChecked && reporter" class="m-lg">
+      <app-reporters-details [reporter]="reporter" [headings]="headings" [loading]="loading">
+      </app-reporters-details>
+    </div>
   </div>
 
   <!-- <div fxLayout="column" fxLayoutAlign="center center">
-    <mat-card *ngFor="let reporter of reporters" class="card mobile">
+    <mat-card *ngFor="let reporter of reporters" class="card m-md cursor-pointer mobile">
       <p *ngFor="let column of displayedColumns" fxLayout="row" fxLayoutAlign="space-between center">
         <span> {{translate(column)}} </span>
         <span> {{reporter[column]}} </span>
@@ -23,27 +37,31 @@
   </div> -->
 
   <div class="mobile">
-    <p class="eleme-cent">{{translate('clickDetails')}}</p>
-    <mat-accordion>
 
-      <mat-expansion-panel *ngFor="let reporter of reporters" hideToggle>
+    <p class="text-center">{{translate('clickDetails')}}</p>
+
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let reporter of reporters" hideToggle class="m-lg">
+
         <mat-expansion-panel-header *ngFor="let column of displayedColumns">
 
           <mat-panel-title>
             <span> {{translate(column)}} </span>
           </mat-panel-title>
 
-          <mat-panel-description>
+          <mat-panel-description class="m-0">
             <span> {{reporter[column]}} </span>
           </mat-panel-description>
 
         </mat-expansion-panel-header>
 
-        <app-reporters-details [reporter]="reporter" [headers]="headers" style="font-size: x-small;">
+        <app-reporters-details [reporter]="reporter" [headings]="headings" [loading]="loading"
+          style="font-size: x-small;">
         </app-reporters-details>
 
       </mat-expansion-panel>
     </mat-accordion>
+
   </div>
 
 </ng-container>

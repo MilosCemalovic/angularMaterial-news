@@ -1,0 +1,35 @@
+<div fxLayout="column" *transloco="let translate">
+
+  <button mat-icon-button color="primary" (click)="close()" fxFlexAlign="end" class="m-md">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div *ngFor="let selectedWorkerFlight of selectedWorkerFlights" fxLayout="column" fxLayoutAlign="center center"
+    class="m-lg">
+
+    <mat-card class="card">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+          <p *ngFor="let heading of headings" class="bold"> {{translate(heading)|uppercase}} </p>
+        </div>
+
+        <div class="text-right">
+          <p> {{selectedWorkerFlight.num}} </p>
+          <p> {{selectedWorkerFlight.from}} </p>
+          <p> {{selectedWorkerFlight.to}} </p>
+          <p> {{selectedWorkerFlight.from_date|date}} </p>
+          <p> {{selectedWorkerFlight.to_date|date}} </p>
+          <p> {{selectedWorkerFlight.plane}} </p>
+          <p> {{selectedWorkerFlight.duration|time}} </p>
+          <p> {{selectedWorkerFlight.from_gate}} </p>
+          <p> {{selectedWorkerFlight.to_gate}} </p>
+        </div>
+      </div>
+    </mat-card>
+
+    <button mat-flat-button color="accent" [cdkCopyToClipboard]="selectedWorkerFlight.num" class="mt-md">
+      {{translate('copyNum')}}
+    </button>
+  </div>
+
+</div>

@@ -1,7 +1,7 @@
 <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" *transloco="let translate">
   <div class="desktop">
     <button mat-button *ngFor="let navLink of navLinks" [routerLink]="navLink.route">
-      <mat-icon class="nav-icon">{{navLink.icon}}</mat-icon>
+      <mat-icon class="mr-sm">{{navLink.icon}}</mat-icon>
       <span>{{translate(navLink.label)}}</span>
     </button>
   </div>

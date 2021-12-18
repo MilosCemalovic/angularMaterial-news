@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
 import { NewsService } from 'src/app/services/news.service'
-import { NewsDetailsService } from 'src/app/services/news-details.service'
 import { Article } from 'src/app/interfaces/article'
 
 @Component({
@@ -16,14 +15,8 @@ export class TechnologyComponent implements OnInit {
   sort = 'desc'
 
   constructor(
-    private newsService: NewsService,
-    // public newsDetails: NewsDetailsService
-  ) {
-    // this.term = this.newsDetails.term
-    // this.articles = this.newsDetails.articles
-    // this.loading = this.newsDetails.loading
-    // this.sort = this.newsDetails.sort
-  }
+    private newsService: NewsService
+  ) { }
 
   ngOnInit(): void {
     this.getTechnology()

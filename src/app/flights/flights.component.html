@@ -1,0 +1,28 @@
+<mat-sidenav-container *transloco="let translate">
+
+  <mat-sidenav #sidenav [autoFocus]="false">
+    <app-flights-details [selectedWorkerFlights]="selectedWorkerFlights" (closeEmitter)="closeSidenav()">
+    </app-flights-details>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <h2 class="m-lg text-center"> {{translate('workerFlights')}} </h2>
+
+    <p class="text-center">{{translate('clickDetails')}}</p>
+
+    <mat-selection-list *ngIf="!loading" [multiple]="false" [(ngModel)]="selectedWorker"
+      (ngModelChange)="onListSelect(selectedWorker)" class="m-lg mat-elevation-z2">
+
+      <!-- <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="sidenav.open()"> -->
+      <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="onWorkerClick()">
+        {{worker.name}}
+      </mat-list-option>
+
+    </mat-selection-list>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<mat-spinner *ngIf="loading"></mat-spinner>

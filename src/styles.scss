@@ -8,7 +8,10 @@
   box-sizing: border-box;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -17,6 +20,56 @@ body {
 
 mat-spinner {
   margin: 30px auto;
+}
+
+/* HELPER CLASESS */
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.m-lg {
+  margin: 30px !important;
+}
+
+.mtb-lg {
+  margin: 30px 0 !important;
+}
+
+.m-md {
+  margin: 10px !important;
+}
+
+.mt-md {
+  margin-top: 10px !important;
+}
+
+.mb-md {
+  margin-bottom: 10px !important;
+}
+
+.ml-md {
+  margin-left: 10px !important;
+}
+
+.mr-sm {
+  margin-right: 5px !important;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .mobile {

@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
 
   navLinks: NavLink[] = [
     { id: 'news', label: 'news', route: ['news'], icon: 'newspaper' },
-    { id: 'reporters', label: 'reporters', route: ['reporters'], icon: 'people' }
+    { id: 'reporters', label: 'reporters', route: ['reporters'], icon: 'people' },
+    { id: 'flights', label: 'flights', route: ['flights'], icon: 'flight' }
   ]
 
   languages = ['en', 'rs']
@@ -25,17 +26,6 @@ export class AppComponent implements OnInit {
     this.transloco.setActiveLang(localStorage.getItem('lang'))
     // pa onda ovo
     this.activeLang = this.transloco.getActiveLang()
-
-    // Ukoliko je activeLang === nul
-    // - pogledaj da li je to ovde potrebno
-    // - ako jeste, seci deo po deo da vidis da li je nesto visak
-    // if (!this.activeLang) {
-    //   this.activeLang = this.transloco.getActiveLang()
-    //   this.transloco.setActiveLang(localStorage.getItem('lang'))
-    //   this.transloco.langChanges$.subscribe(
-    //     () => localStorage.setItem('lang', this.activeLang)
-    //   )
-    // }
   }
 
   changeLang(lang) {

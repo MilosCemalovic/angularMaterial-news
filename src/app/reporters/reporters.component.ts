@@ -15,7 +15,9 @@ export class ReportersComponent implements OnInit {
   loading = true
   displayedColumns = ['id', 'name', 'username', 'website']
   columnsToDisplay = this.displayedColumns.slice()
-  headers = ['phone', 'email', 'city', 'streetAddress', 'suite', 'zipCode', 'streetAddressLatitude', 'streetAddressLongitude', 'company', 'companyBusinessServices', 'companyCatchphrase']
+  headings = ['phone', 'email', 'city', 'streetAddress', 'suite', 'zipCode', 'streetAddressLatitude', 'streetAddressLongitude', 'company', 'companyBusinessServices', 'companyCatchphrase']
+  isChecked = true
+  reporter: Reporter
 
   constructor(
     private reportersService: ReportersService,
@@ -41,13 +43,18 @@ export class ReportersComponent implements OnInit {
   }
 
   onClick(reporter: Reporter) {
-    this.dialog.open(ReportersDialogComponent, {
-      width: '90%',
-      data: {
-        reporter: { ...reporter },
-        headers: this.headers
-      }
-    })
+
+    this.reporter = reporter
+
+    if (this.isChecked) {
+      this.dialog.open(ReportersDialogComponent, {
+        width: '90%',
+        data: {
+          reporter: { ...reporter },
+          headings: this.headings
+        }
+      })
+    }
   }
 
 }

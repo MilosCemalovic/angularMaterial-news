@@ -1,8 +1,3 @@
-.eleme-cent {
-  text-align: center;
-  margin-top: 20px;
-}
-
 .table-wrapper {
   position: relative;
   height: 400px;
@@ -11,8 +6,13 @@
   table {
     width: 100%;
 
+    .mat-column-id {
+      width: 60px;
+    }
+
     .mat-row {
-      cursor: pointer;
+
+      height:45px;
 
       &:hover {
         background-color: whitesmoke;
@@ -33,15 +33,6 @@
   }
 }
 
-mat-expansion-panel {
-  margin-bottom: 10px;
-
-  mat-panel-description {
-    justify-content: end;
-  }
+mat-panel-description {
+  justify-content: end;
 }
-
-// .card {
-//   width: 260px;
-//   margin: 10px;
-// }
