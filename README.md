@@ -30,13 +30,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - News articles are displayed via Angular Material Card
 - Original News articles can be seen via Angular Material Button
 - User can view Reporters via Angular Material Table & Dialog on large screens and it's details via Angular Material Expansion Panel on mobile screens
-- User can choose to not see Reporter details (pop-up) Dialog via Angular Material Slide toggle
+- User can choose not to see Reporter details (pop-up) Dialog via Angular Material Slide toggle
 - User can view Workers via Angular Material Selection List
 - User can view Worker Flights via Angular Material Sidenav and Angular Material Card
 - User can copy Worker Flights number via Clipboard
 - Worker Flights are modified with custom and build-in Angular pipes
 - User can switch between English and Serbian laguage via Angular Material Menu
 - Content is translated via Transloco Service
+- Project is using Angular Flex Layout and custom styles
 
 ## Project is using APIs from
 
