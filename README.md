@@ -20,20 +20,29 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-- User is getting data from Mediastack API and JSONPlaceholder API
+- User is getting data from 3 APIs
 - Navigation is displayed via Angular Material Toolbar
-- User is able to switch between 2 News (Mediastack) categories via Angular Material Tabs
+- User is able to switch between 2 News categories via Angular Material Tabs
 - News articles contain: title, description, author, date of publish, image (if has one) and URL to original post
-- News are filtered and displayed via Angular Material Card
-- User can view Reporters (JSONPlaceholder) via Angular Material Table & Dialog on large screens and it's details via Angular Material Expansion Panel on mobile screens
 - User is able to search News articles by keywords via Ng2 Search Filter
+- News articles are filtered by language & category
+- News articles can be sorted - ASC or DESC
+- News articles are displayed via Angular Material Card
+- Original News articles can be seen via Angular Material Button
+- User can view Reporters via Angular Material Table & Dialog on large screens and it's details via Angular Material Expansion Panel on mobile screens
+- User can choose to not see Reporter details (pop-up) Dialog via Angular Material Slide toggle
+- User can view Workers via Angular Material Selection List
+- User can view Worker Flights via Angular Material Sidenav and Angular Material Card
+- User can copy Worker Flights number via Clipboard
+- Worker Flights are modified with custom and build-in Angular pipes
 - User can switch between English and Serbian laguage via Angular Material Menu
-- User can translate content via Transloco Service
+- Content is translated via Transloco Service
 
 ## Project is using APIs from
 
 - `https://mediastack.com/`
 - `https://jsonplaceholder.typicode.com/`
+- `https://interview-mock.herokuapp.com/`
 
 ## Installed packages
 
