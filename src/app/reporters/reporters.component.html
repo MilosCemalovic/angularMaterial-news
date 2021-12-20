@@ -17,7 +17,8 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;" (click)="onClick(row)" class="cursor-pointer"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;" (click)="onClick(row)"
+          [ngClass]="{'selected': row.id === reporter?.id}" class="cursor-pointer"></tr>
       </table>
     </div>
 
