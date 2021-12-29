@@ -12,7 +12,7 @@ import { ReportersDialogComponent } from './reporters-dialog/reporters-dialog.co
 export class ReportersComponent implements OnInit {
 
   reporters: Reporter[] = []
-  loading = true
+  loading = false
   displayedColumns = ['id', 'name', 'username', 'website']
   columnsToDisplay = this.displayedColumns.slice()
   headings = ['phone', 'email', 'city', 'streetAddress', 'suite', 'zipCode', 'streetAddressLatitude', 'streetAddressLongitude', 'company', 'companyBusinessServices', 'companyCatchphrase']
@@ -29,6 +29,7 @@ export class ReportersComponent implements OnInit {
   }
 
   getReportersFromService() {
+    this.loading = true
     this.reportersService.getReporters().subscribe(
       (reporters) => {
         this.loading = false
