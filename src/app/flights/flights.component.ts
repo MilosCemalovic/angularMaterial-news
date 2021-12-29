@@ -12,7 +12,7 @@ import { WorkerFlight } from './../interfaces/worker-flight'
 export class FlightsComponent implements OnInit {
 
   workers: Worker[] = []
-  loading = true
+  loading = false
   selectedWorker: Worker[]
   selectedWorkerFlights: WorkerFlight[]
 
@@ -27,6 +27,7 @@ export class FlightsComponent implements OnInit {
   }
 
   getWorkersFromServer() {
+    this.loading = true
     this.flightsService.getWorkers().subscribe(
       (workers) => {
         this.loading = false
