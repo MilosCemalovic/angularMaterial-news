@@ -22,10 +22,17 @@ export class AppComponent implements OnInit {
   constructor(private transloco: TranslocoService) { }
 
   ngOnInit(): void {
+
     // Get language from Local Storage - mora da ide prvo ovo
-    this.transloco.setActiveLang(localStorage.getItem('lang'))
+    if (!localStorage.getItem('lang')) {
+      this.transloco.setActiveLang('en')
+    } else {
+      this.transloco.setActiveLang(localStorage.getItem('lang'))
+    }
+
     // pa onda ovo
     this.activeLang = this.transloco.getActiveLang()
+
   }
 
   changeLang(lang) {

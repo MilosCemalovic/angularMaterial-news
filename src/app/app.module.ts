@@ -11,6 +11,7 @@ import { TechnologyComponent } from './news/technology/technology.component'
 import { SerbianComponent } from './news/serbian/serbian.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 import { NewsDetailsComponent } from './news/news-details/news-details.component'
+import { TranslocoRootModule } from './transloco-root.module'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { NewsDetailsComponent } from './news/news-details/news-details.component
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // TranslocoRootModule
+    TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]
