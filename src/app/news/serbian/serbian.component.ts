@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { NewsService } from 'src/app/services/news.service'
 import { Article } from 'src/app/interfaces/article'
+import { News } from './../../interfaces/news'
 
 @Component({
   selector: 'app-serbian',
@@ -14,9 +15,7 @@ export class SerbianComponent implements OnInit {
   term = ''
   sort = 'desc'
 
-  constructor(
-    private newsService: NewsService
-  ) { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
     this.getSerbian()
@@ -25,7 +24,7 @@ export class SerbianComponent implements OnInit {
   getSerbian() {
     this.loading = true
     this.newsService.getSerbianNews(this.sort).subscribe(
-      (news) => {
+      (news: News) => {
         this.loading = false
         this.articles = news.data
       },
