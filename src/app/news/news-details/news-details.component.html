@@ -1,15 +1,17 @@
 <ng-container *transloco="let translate">
-  <div fxLayout="row" fxLayoutAlign="center center">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
     <mat-form-field class="mt-md">
       <input matInput type="text" [(ngModel)]="term" placeholder="{{translate('search')}}">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-    <button class="ml-md" mat-flat-button color="primary" (click)="sortAsc()">
-      <mat-icon>arrow_upward</mat-icon>
-    </button>
-    <button class="ml-md" mat-flat-button color="primary" (click)="sortDesc()">
-      <mat-icon>arrow_downward</mat-icon>
-    </button>
+    <div>
+      <button class="ml-md" mat-flat-button color="primary" (click)="sortAsc()">
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
+      <button class="ml-md" mat-flat-button color="primary" (click)="sortDesc()">
+        <mat-icon>arrow_downward</mat-icon>
+      </button>
+    </div>
   </div>
 
   <div fxLayout="row wrap" fxLayoutAlign="center">
