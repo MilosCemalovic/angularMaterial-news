@@ -31,7 +31,7 @@ export class ReportersComponent implements OnInit {
   getReportersFromService() {
     this.loading = true
     this.reportersService.getReporters().subscribe(
-      (reporters) => {
+      (reporters: Reporter[]) => {
         this.loading = false
         this.reporters = reporters
       },
