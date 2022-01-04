@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { NewsService } from 'src/app/services/news.service'
 import { Article } from 'src/app/interfaces/article'
+import { News } from './../../interfaces/news'
 
 @Component({
   selector: 'app-technology',
@@ -25,7 +26,7 @@ export class TechnologyComponent implements OnInit {
   getTechnology() {
     this.loading = true
     this.newsService.getTechnologyNews(this.sort).subscribe(
-      (news) => {
+      (news: News) => {
         this.loading = false
         this.articles = news.data
       },
