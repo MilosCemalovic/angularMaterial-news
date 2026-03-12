@@ -1,14 +1,14 @@
 # angularMaterial-news
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
 ## Run the project
 
-- Run `npm i` to install packages
+- Run `npm install` to install packages
 
 ## Development server
 
-- Run `ng s` for a dev server
+- Run `ng serve` for a dev server
 - Navigate to `http://localhost:4200/`
 
 ## Build
@@ -24,7 +24,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Navigation is displayed via Angular Material Toolbar
 - User is able to switch between 2 News categories via Angular Material Tabs
 - News articles contain: title, description, author, date of publish, image (if has one) and URL to original post
-- User is able to search News articles by keywords via Ng2 Search Filter
+- User is able to search News articles by keywords via custom FilterPipe (replacement for Ng2 Search Filter)
 - News articles are filtered by language & category
 - News articles can be sorted - ASC or DESC
 - News articles are displayed via Angular Material Card
@@ -47,10 +47,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installed packages
 
-- Angular Material
+- Angular Material 17
 - Angular Flex Layout
 - Material Icons
-- Ng2 Search Filter
+- Custom FilterPipe (replaces deprecated Ng2 Search Filter)
 - Transloco Service
 
 ## Installed Angular Material components
@@ -70,5 +70,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Input
 - Button
 - Icon
+
+## Changelog
+
+### Latest Update (March 2026)
+- Upgraded from Angular 11 to Angular 17
+- Replaced Ng2 Search Filter with custom FilterPipe
+- Updated TypeScript target to ES2022
+- Fixed zone.js import compatibility
 
 ## There is the same project in PrimeNG on this GitHub account

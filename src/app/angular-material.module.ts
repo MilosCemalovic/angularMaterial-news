@@ -23,6 +23,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 // import { MatDividerModule } from '@angular/material/divider'
 
 @NgModule({
+  declarations: [
+    FilterPipe
+  ],
   exports: [
     FlexLayoutModule,
     TranslocoModule,
