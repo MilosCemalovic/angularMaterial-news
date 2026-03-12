@@ -13,8 +13,11 @@
     "target": "es2015",
     "module": "es2020",
     "lib": [
-      "es2018",
+      ""ES2022"",
       "dom"
     ]
+      "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
+}
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { TranslocoModule } from '@ngneat/transloco'
 import { TranslocoRootModule } from './transloco-root.module'
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { FilterPipe } from './pipes/filter.pipe'
 import { FormsModule } from '@angular/forms'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button'
@@ -28,7 +28,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
     TranslocoModule,
     TranslocoRootModule,
     FormsModule,
-    Ng2SearchPipeModule,
+    FilterPipe,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
