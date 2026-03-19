@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core'
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http'
-import { Observable, throwError, timer, Subject } from 'rxjs'
-import { catchError, retryWhen, mergeMap, take, delayWhen } from 'rxjs/operators'
+import { Observable, throwError, timer } from 'rxjs'
+import { catchError, retryWhen, mergeMap, take } from 'rxjs/operators'
 import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
 
   private mediastackBaseUrl = 'api.mediastack.com'
-  private maxRetries = 3
+  private maxRetries = 5
 
   constructor(private snackBar: MatSnackBar) {}
 
@@ -18,15 +18,18 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         retryWhen(errors =>
           errors.pipe(
             mergeMap((error, index) => {
-              const retryIndex = index + 1
-              if (retryIndex > this.maxRetries) {
-                return throwError(() => error)
-              }
-              if (error.status === 429) {
-                const delayTime = Math.pow(2, retryIndex) * 1000
-                console.log(`Retrying after 429 error. Attempt ${retryIndex}/${this.maxRetries}. Waiting ${delayTime}ms`)
+              const retryCount = index + 1
+
+              if (error.status === 429 && retryCount <= this.maxRetries) {
+                if (retryCount === 1) {
+                  this.snackBar.open('Rate limited. Retrying...', 'Close', { duration: 2000 })
+                }
+
+                const delayTime = retryCount * 2000
+                console.log(`Retrying after 429. Attempt ${retryCount}/${this.maxRetries}. Waiting ${delayTime}ms`)
                 return timer(delayTime)
               }
+
               return throwError(() => error)
             }),
             take(this.maxRetries)
