@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-environments/
+src/environments/
 
 # Build output
 dist/
