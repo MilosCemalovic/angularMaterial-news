@@ -1,4 +1,4 @@
-import { WorkerFlight } from './../interfaces/worker-flight';
+import { WorkerFlight } from './../interfaces/worker-flight'
 import { Injectable } from '@angular/core'
 import { environment } from 'src/environments/environment'
 import { HttpClient } from '@angular/common/http'
@@ -9,8 +9,6 @@ import { Worker } from './../interfaces/worker'
   providedIn: 'root'
 })
 export class FlightsService {
-
-  workers = environment.flights
 
   private mockWorkers: Worker[] = [
     { id: 1, name: 'John Smith' },
@@ -46,13 +44,13 @@ export class FlightsService {
     ]
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getWorkers(): Observable<Worker[]> {
+  getWorkers (): Observable<Worker[]> {
     return of(this.mockWorkers)
   }
 
-  getWorkerFlights(id: number): Observable<WorkerFlight[]> {
+  getWorkerFlights (id: number): Observable<WorkerFlight[]> {
     return of(this.mockFlights[id] || [])
   }
 }

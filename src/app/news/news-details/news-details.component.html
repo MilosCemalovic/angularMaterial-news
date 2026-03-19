@@ -20,11 +20,14 @@
       fxLayoutAlign="space-between">
 
       <img *ngIf="article.image" mat-card-image [src]="article.image" [alt]="article.title">
+      <div *ngIf="!article.image" class="fallback-image">
+        <span>Mediastack API hasn't returned an image</span>
+      </div>
 
       <mat-card-content>
-        <h1>{{article.title}}</h1>
-        <p *ngIf="article.author">{{article.author}}</p>
-        <p>{{article.description}}</p>
+        <h1>{{article.title | decodeHtml}}</h1>
+        <p *ngIf="article.author">{{article.author | decodeHtml}}</p>
+        <p>{{article.description | decodeHtml}}</p>
       </mat-card-content>
 
       <div fxLayout="row" fxLayoutAlign="space-between center">

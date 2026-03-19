@@ -1,3 +1,20 @@
 .card {
-  max-width: 360px;
+  max-width: 35rem;
+  padding: 2rem;
+}
+
+.fallback-image {
+  background-color: #1976d2;
+  color: white;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 -16px 16px -16px;
+  width: calc(100% + 32px);
+  box-sizing: border-box;
 }
