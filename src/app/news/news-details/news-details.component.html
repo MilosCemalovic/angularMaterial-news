@@ -16,8 +16,7 @@
 
   <div fxLayout="row wrap" fxLayoutAlign="center">
 
-    <mat-card *ngFor="let article of articles | filter:term" class="card m-lg" fxLayout="column"
-      fxLayoutAlign="start stretch">
+    <mat-card *ngFor="let article of articles | filter:term" class="card m-lg">
 
       <img *ngIf="article.image" mat-card-image [src]="article.image" [alt]="article.title">
       <div *ngIf="!article.image" class="fallback-image">
@@ -30,7 +29,7 @@
         <p>{{article.description | decodeHtml}}</p>
       </mat-card-content>
 
-      <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="card-footer" fxLayout="row" fxLayoutAlign="space-between center">
         <p class="m-0">{{article.published_at | date: 'dd. MMM. HH:mm'}}</p>
         <a mat-stroked-button color="primary" [href]="article.url" target="_blank">{{translate('viewArticle')}}</a>
       </div>
