@@ -1,6 +1,10 @@
 .card {
-  max-width: 35rem;
+  max-width: 20rem;
   padding: 2rem;
+}
+
+mat-card-content h1 {
+  margin-top: 12px;
 }
 
 .fallback-image {

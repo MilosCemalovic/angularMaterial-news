@@ -17,7 +17,7 @@
   <div fxLayout="row wrap" fxLayoutAlign="center">
 
     <mat-card *ngFor="let article of articles | filter:term" class="card m-lg" fxLayout="column"
-      fxLayoutAlign="space-between">
+      fxLayoutAlign="start stretch">
 
       <img *ngIf="article.image" mat-card-image [src]="article.image" [alt]="article.title">
       <div *ngIf="!article.image" class="fallback-image">
