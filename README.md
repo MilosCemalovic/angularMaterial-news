@@ -20,7 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-- User is getting data from 3 APIs
+- User is getting data from APIs and mock data
 - Navigation is displayed via Angular Material Toolbar
 - User is able to switch between 2 News categories via Angular Material Tabs
 - News articles contain: title, description, author, date of publish, image (if has one) and URL to original post
@@ -43,7 +43,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - `https://mediastack.com/`
 - `https://jsonplaceholder.typicode.com/`
-- `https://interview-mock.herokuapp.com/`
 
 ## Installed packages
 
@@ -74,6 +73,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Changelog
 
 ### Latest Update (March 2026)
+
 - Upgraded from Angular 11 to Angular 17
 - Replaced Ng2 Search Filter with custom FilterPipe
 - Updated TypeScript target to ES2022
