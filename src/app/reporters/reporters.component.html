@@ -22,7 +22,12 @@
       </div>
 
       <!-- Desktop Table View -->
-      <div *ngIf="!showMobilePreview && !loading" class="table-wrapper mat-elevation-z2 content-card">
+      <div *ngIf="!showMobilePreview && !loading">
+        <div class="click-hint" *transloco="let translate">
+          <mat-icon>touch_app</mat-icon>
+          {{translate('clickDetails')}}
+        </div>
+        <div class="table-wrapper mat-elevation-z2 content-card">
 
         <table mat-table [dataSource]="reporters">
 
@@ -35,6 +40,7 @@
           <tr mat-row *matRowDef="let row; columns: columnsToDisplay;" (click)="onClick(row)"
             [ngClass]="{'selected': row.id === reporter?.id}" class="cursor-pointer"></tr>
         </table>
+        </div>
       </div>
 
       <div *ngIf="!isChecked && reporter && !showMobilePreview" class="m-lg content-card">
@@ -44,10 +50,13 @@
 
       <!-- Mobile Preview View (shown when toggled on desktop) -->
       <div *ngIf="showMobilePreview" class="mobile-preview">
-        <p class="text-center">{{translate('clickDetails')}}</p>
+        <div class="click-hint" *transloco="let translate">
+        <mat-icon>touch_app</mat-icon>
+        {{translate('clickDetails')}}
+      </div>
 
         <mat-accordion>
-          <mat-expansion-panel *ngFor="let reporter of reporters" hideToggle class="m-lg content-card">
+          <mat-expansion-panel *ngFor="let reporter of reporters" hideToggle class="content-card">
 
             <mat-expansion-panel-header *ngFor="let column of displayedColumns">
 
@@ -72,10 +81,13 @@
 
     <!-- Native Mobile View (for actual mobile devices) -->
     <div class="mobile">
-      <p class="text-center">{{translate('clickDetails')}}</p>
+      <div class="click-hint" *transloco="let translate">
+        <mat-icon>touch_app</mat-icon>
+        {{translate('clickDetails')}}
+      </div>
 
       <mat-accordion>
-        <mat-expansion-panel *ngFor="let reporter of reporters" hideToggle class="m-lg content-card">
+        <mat-expansion-panel *ngFor="let reporter of reporters" hideToggle class="content-card">
 
           <mat-expansion-panel-header *ngFor="let column of displayedColumns">
 

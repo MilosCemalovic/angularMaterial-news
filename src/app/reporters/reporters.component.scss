@@ -1,4 +1,4 @@
-@import '../shared/styles/page-backgrounds';
+@import '../../styles';
 
 .page-container {
   @include page-background('/assets/reporters-bg.jpg');
@@ -62,5 +62,53 @@ mat-panel-description {
 ::ng-deep {
   .mat-expansion-panel {
     @include content-card;
+    margin: 1rem 0 !important;
+  }
+
+  @media (max-width: 960px) {
+    .action-buttons {
+      button {
+        min-width: 18rem;
+        padding: 0 1.5rem;
+        flex-shrink: 0;
+        white-space: nowrap;
+
+        .mat-icon {
+          font-size: 2rem;
+          width: 2rem;
+          height: 2rem;
+        }
+
+        .mat-slide-toggle {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .mobile, .mobile-preview {
+      padding: 0 1rem;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    .mat-expansion-panel {
+      margin: 1rem auto !important;
+      width: 90vw !important;
+      max-width: 100% !important;
+      padding: 1.5rem !important;
+    }
+
+    .mat-expansion-panel-header {
+      padding: 1rem !important;
+    }
+
+    .mat-expansion-panel-header-title,
+    .mat-expansion-panel-header-description {
+      font-size: 1.1rem !important;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 0 16px 0 0 !important;
+    }
   }
 }
