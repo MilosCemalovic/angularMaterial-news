@@ -9,12 +9,20 @@
 
   <ng-container *transloco="let translate">
     <div class="desktop">
-      <button mat-flat-button color="primary" class="m-md">
-        <mat-slide-toggle [(ngModel)]="isChecked" class="mr-sm">Pop-up</mat-slide-toggle>
-        <mat-icon>{{isChecked ? 'thumb_up_alt' : 'thumb_down_alt'}}</mat-icon>
-      </button>
+      <div class="action-buttons">
+        <button mat-flat-button color="primary" class="m-md">
+          <mat-slide-toggle [(ngModel)]="isChecked" class="mr-sm">Pop-up</mat-slide-toggle>
+          <mat-icon>{{isChecked ? 'thumb_up_alt' : 'thumb_down_alt'}}</mat-icon>
+        </button>
 
-      <div *ngIf="!loading" class="table-wrapper mat-elevation-z2 content-card">
+        <button mat-flat-button color="accent" (click)="toggleMobilePreview()" class="m-md">
+          <mat-icon>{{showMobilePreview ? 'phonelink_erase' : 'mobile_friendly'}}</mat-icon>
+          {{showMobilePreview ? 'Hide Mobile' : 'Preview Mobile'}}
+        </button>
+      </div>
+
+      <!-- Desktop Table View -->
+      <div *ngIf="!showMobilePreview && !loading" class="table-wrapper mat-elevation-z2 content-card">
 
         <table mat-table [dataSource]="reporters">
 
@@ -29,23 +37,41 @@
         </table>
       </div>
 
-      <div *ngIf="!isChecked && reporter" class="m-lg content-card">
+      <div *ngIf="!isChecked && reporter && !showMobilePreview" class="m-lg content-card">
         <app-reporters-details [reporter]="reporter" [headings]="headings" [loading]="loading">
         </app-reporters-details>
       </div>
+
+      <!-- Mobile Preview View (shown when toggled on desktop) -->
+      <div *ngIf="showMobilePreview" class="mobile-preview">
+        <p class="text-center">{{translate('clickDetails')}}</p>
+
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let reporter of reporters" hideToggle class="m-lg content-card">
+
+            <mat-expansion-panel-header *ngFor="let column of displayedColumns">
+
+              <mat-panel-title>
+                <span> {{translate(column)}} </span>
+              </mat-panel-title>
+
+              <mat-panel-description class="m-0">
+                <span> {{reporter[column]}} </span>
+              </mat-panel-description>
+
+            </mat-expansion-panel-header>
+
+            <app-reporters-details [reporter]="reporter" [headings]="headings" [loading]="loading"
+              style="font-size: x-small;">
+            </app-reporters-details>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
     </div>
 
-    <!-- <div fxLayout="column" fxLayoutAlign="center center">
-    <mat-card *ngFor="let reporter of reporters" class="card m-md cursor-pointer mobile">
-      <p *ngFor="let column of displayedColumns" fxLayout="row" fxLayoutAlign="space-between center">
-        <span> {{translate(column)}} </span>
-        <span> {{reporter[column]}} </span>
-      </p>
-    </mat-card>
-  </div> -->
-
+    <!-- Native Mobile View (for actual mobile devices) -->
     <div class="mobile">
-
       <p class="text-center">{{translate('clickDetails')}}</p>
 
       <mat-accordion>
@@ -69,7 +95,6 @@
 
         </mat-expansion-panel>
       </mat-accordion>
-
     </div>
 
   </ng-container>

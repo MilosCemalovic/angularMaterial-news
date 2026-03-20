@@ -18,6 +18,11 @@ export class ReportersComponent implements OnInit {
   headings = ['phone', 'email', 'city', 'streetAddress', 'suite', 'zipCode', 'streetAddressLatitude', 'streetAddressLongitude', 'company', 'companyBusinessServices', 'companyCatchphrase']
   isChecked = true
   reporter: Reporter
+  showMobilePreview = false
+
+  toggleMobilePreview() {
+    this.showMobilePreview = !this.showMobilePreview
+  }
 
   constructor(
     private reportersService: ReportersService,

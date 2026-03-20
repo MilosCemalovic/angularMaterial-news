@@ -4,6 +4,17 @@
   @include page-background('/assets/reporters-bg.jpg');
 }
 
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mobile-preview {
+  animation: fadeIn 0.5s ease-out;
+}
+
 .table-wrapper {
   position: relative;
   height: 40rem;
