@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'app/shared/styles/page-backgrounds';
 
 *,
 *::after,
@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+}
+
 html,
 body {
   height: 100%;
@@ -15,11 +19,11 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 mat-spinner {
-  margin: 30px auto;
+  margin: 3rem auto;
 }
 
 /* HELPER CLASESS */
@@ -29,31 +33,31 @@ mat-spinner {
 }
 
 .m-lg {
-  margin: 30px !important;
+  margin: 3rem !important;
 }
 
 .mtb-lg {
-  margin: 30px 0 !important;
+  margin: 3rem 0 !important;
 }
 
 .m-md {
-  margin: 10px !important;
+  margin: 1rem !important;
 }
 
 .mt-md {
-  margin-top: 10px !important;
+  margin-top: 1rem !important;
 }
 
 .mb-md {
-  margin-bottom: 10px !important;
+  margin-bottom: 1rem !important;
 }
 
 .ml-md {
-  margin-left: 10px !important;
+  margin-left: 1rem !important;
 }
 
 .mr-sm {
-  margin-right: 5px !important;
+  margin-right: 0.5rem !important;
 }
 
 .bold {
@@ -76,7 +80,7 @@ mat-spinner {
   display: none !important;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 96rem) {
   .desktop {
     display: none !important;
   }

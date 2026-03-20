@@ -1,1 +1,38 @@
-// Place styles here
+@import '../shared/styles/page-backgrounds';
+
+.page-container {
+  @include page-background('/assets/news-bg.jpg');
+}
+
+::ng-deep {
+  .mat-tab-group {
+    @include content-card;
+    
+    .mat-tab-header {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 0.8rem 0.8rem 0 0;
+    }
+
+    .mat-tab-label {
+      color: #333;
+      font-weight: 500;
+      font-size: 1.1rem;
+      
+      &.mat-tab-label-active {
+        color: #ff6b6b;
+        font-weight: 600;
+      }
+    }
+    
+    .mat-ink-bar {
+      background-color: #ff6b6b;
+      height: 0.3rem;
+    }
+
+    .mat-tab-body-wrapper {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 0 0 0.8rem 0.8rem;
+      padding: 2rem;
+    }
+  }
+}

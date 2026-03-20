@@ -1,28 +1,36 @@
-<mat-sidenav-container class="container" *transloco="let translate">
+<div class="page-container">
+  <div class="page-header flights-header" *transloco="let translate">
+    <h1>
+      <mat-icon>flight</mat-icon>
+      {{translate('workerFlights')}}
+    </h1>
+    <div class="divider"></div>
+  </div>
 
-  <mat-sidenav #sidenav [autoFocus]="false">
-    <app-flights-details [selectedWorkerFlights]="selectedWorkerFlights" (closeEmitter)="closeSidenav()">
-    </app-flights-details>
-  </mat-sidenav>
+  <mat-sidenav-container class="container" *transloco="let translate">
 
-  <mat-sidenav-content>
+    <mat-sidenav #sidenav [autoFocus]="false">
+      <app-flights-details [selectedWorkerFlights]="selectedWorkerFlights" (closeEmitter)="closeSidenav()">
+      </app-flights-details>
+    </mat-sidenav>
 
-    <h2 class="m-lg text-center"> {{translate('workerFlights')}} </h2>
+    <mat-sidenav-content>
 
-    <p class="text-center">{{translate('clickDetails')}}</p>
+      <p class="text-center">{{translate('clickDetails')}}</p>
 
-    <mat-selection-list *ngIf="!loading" [multiple]="false" [(ngModel)]="selectedWorker"
-      (ngModelChange)="onListSelect(selectedWorker)" class="m-lg mat-elevation-z2">
+      <mat-selection-list *ngIf="!loading" [multiple]="false" [(ngModel)]="selectedWorker"
+        (ngModelChange)="onListSelect(selectedWorker)" class="m-lg mat-elevation-z2 content-card">
 
-      <!-- <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="sidenav.open()"> -->
-      <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="onWorkerClick()">
-        {{worker.name}}
-      </mat-list-option>
+        <!-- <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="sidenav.open()"> -->
+        <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="onWorkerClick()">
+          {{worker.name}}
+        </mat-list-option>
 
-    </mat-selection-list>
+      </mat-selection-list>
 
-  </mat-sidenav-content>
+    </mat-sidenav-content>
 
-</mat-sidenav-container>
+  </mat-sidenav-container>
 
-<mat-spinner *ngIf="loading"></mat-spinner>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>

@@ -1,42 +1,55 @@
+@import '../shared/styles/page-backgrounds';
+
+.page-container {
+  @include page-background('/assets/reporters-bg.jpg');
+}
+
 .table-wrapper {
   position: relative;
-  height: 400px;
+  height: 40rem;
   overflow: auto;
 
   table {
     width: 100%;
 
     .mat-column-id {
-      width: 60px;
+      width: 6rem;
     }
 
     .mat-row {
-
-      height:45px;
+      height: 4.5rem;
+      transition: all 0.3s ease;
 
       &:hover {
-        background-color: whitesmoke;
+        background-color: #fff3e0;
+        transform: scale(1.01);
+        box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
       }
     }
 
     th,
     td {
-
       &:not(:last-child) {
         border-right: 1px solid #f1f1f1;
       }
 
       &:not(:first-child) {
-        padding-left: 25px;
+        padding-left: 2.5rem;
       }
     }
 
     .selected {
-      background-color: lightgray;
+      background-color: #ffe0b2;
     }
   }
 }
 
 mat-panel-description {
   justify-content: end;
+}
+
+::ng-deep {
+  .mat-expansion-panel {
+    @include content-card;
+  }
 }

@@ -1,5 +1,29 @@
-// Place your styles here
+@import '../shared/styles/page-backgrounds';
+
+.page-container {
+  @include page-background('/assets/flights-bg.jpg');
+}
+
 .container {
-  background-color: #fff;
+  background-color: transparent;
   height: 80vh;
+}
+
+::ng-deep {
+  .mat-sidenav {
+    background: linear-gradient(180deg, #f0f8ff, #e8f4fd);
+  }
+
+  .mat-selection-list {
+    @include content-card;
+  }
+
+  .mat-list-option {
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #e3f2fd !important;
+      transform: translateX(0.5rem);
+    }
+  }
 }

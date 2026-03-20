@@ -1,11 +1,21 @@
-<div class="m-lg" *transloco="let translate">
-  <mat-tab-group>
-    <mat-tab label="{{translate('technology')}}">
-      <app-technology></app-technology>
-    </mat-tab>
+<div class="page-container">
+  <div class="page-header news-header" *transloco="let translate">
+    <h1>
+      <mat-icon>newspaper</mat-icon>
+      {{translate('news')}}
+    </h1>
+    <div class="divider"></div>
+  </div>
 
-    <mat-tab label="{{translate('serbian')}}">
-      <app-serbian></app-serbian>
-    </mat-tab>
-  </mat-tab-group>
+  <div class="m-lg" *transloco="let translate">
+    <mat-tab-group>
+      <mat-tab label="{{translate('technology')}}">
+        <app-technology></app-technology>
+      </mat-tab>
+
+      <mat-tab label="{{translate('serbian')}}">
+        <app-serbian></app-serbian>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

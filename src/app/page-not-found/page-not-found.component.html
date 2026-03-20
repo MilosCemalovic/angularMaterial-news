@@ -1,1 +1,8 @@
-<img src="/assets/page-not-found.jpg" alt="page not found image" width="100%">
+<div class="page-container" *transloco="let translate">
+  <h1>404</h1>
+  <p>{{translate('pageNotFound')}}</p>
+  <a mat-flat-button color="primary" routerLink="/">
+    <mat-icon>home</mat-icon>
+    {{translate('goHome')}}
+  </a>
+</div>
