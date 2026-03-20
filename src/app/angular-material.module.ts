@@ -19,8 +19,7 @@ import { MatListModule } from '@angular/material/list'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { ClipboardModule } from '@angular/cdk/clipboard'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
-// import { MatBottomSheetModule } from '@angular/material/bottom-sheet'
-// import { MatDividerModule } from '@angular/material/divider'
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 
 @NgModule({
   declarations: [
@@ -46,9 +45,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
     MatListModule,
     MatSidenavModule,
     ClipboardModule,
-    MatSlideToggleModule
-    // MatBottomSheetModule,
-    // MatDividerModule
+    MatSlideToggleModule,
+    MatButtonToggleModule
   ]
 })
-export class AngularMaterialModule { }
+export class AngularMaterialModule {}
