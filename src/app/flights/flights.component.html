@@ -16,12 +16,14 @@
 
     <mat-sidenav-content>
 
-      <div class="click-hint" *transloco="let translate">
-        <mat-icon>touch_app</mat-icon>
-        {{translate('clickDetails')}}
-      </div>
+      <ng-container *ngIf="showWorkers">
+        <div class="click-hint" *transloco="let translate">
+          <mat-icon>touch_app</mat-icon>
+          {{translate('clickDetails')}}
+        </div>
+      </ng-container>
 
-      <div *ngIf="!loading" class="workers-grid content-card">
+      <div *ngIf="!loading && showWorkers" class="workers-grid content-card">
         <div *ngFor="let worker of workers" class="worker-card" (click)="selectWorker(worker)">
           <div class="worker-avatar">
             <mat-icon>person</mat-icon>

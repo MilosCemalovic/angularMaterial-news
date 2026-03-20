@@ -1,50 +1,19 @@
-@import '../shared/styles/page-backgrounds';
+@import '../../styles';
 
 .page-container {
   @include page-background('/assets/flights-bg.jpg');
+}
+
+@media (max-width: 960px) {
+  .page-container {
+    padding: 1rem !important;
+  }
 }
 
 .container {
   background-color: transparent;
   height: 80vh;
   overflow-x: hidden;
-}
-
-.click-hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #00cec9, #0984e3);
-  border-radius: 1.2rem;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 600;
-  box-shadow: 0 0.4rem 1.5rem rgba(0, 206, 201, 0.4);
-  animation: pulse 2s infinite;
-
-  mat-icon {
-    font-size: 2rem;
-    width: 2rem;
-    height: 2rem;
-  }
-
-  &:hover {
-    transform: scale(1.02);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.02);
-    opacity: 0.9;
-  }
 }
 
 .workers-grid {
@@ -149,8 +118,8 @@
     max-width: 50%;
 
     @media (max-width: 960px) {
-      width: 90%;
-      max-width: 90%;
+      width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -164,5 +133,40 @@
 
   .mat-drawer-content {
     overflow: hidden !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .worker-card {
+    padding: 1.5rem;
+
+    .worker-avatar {
+      width: 4rem;
+      height: 4rem;
+
+      mat-icon {
+        font-size: 2rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .worker-info {
+      padding: 0 0.8rem;
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      .worker-company {
+        font-size: 1rem;
+      }
+    }
+
+    .arrow-icon {
+      font-size: 1.8rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
   }
 }

@@ -15,6 +15,7 @@ export class FlightsComponent implements OnInit {
   loading = false
   selectedWorker: Worker[]
   selectedWorkerFlights: WorkerFlight[]
+  showWorkers = true
 
   @ViewChild('sidenav') sidenav: MatSidenav
 
@@ -45,6 +46,10 @@ export class FlightsComponent implements OnInit {
     this.selectedWorker = [worker]
     this.onListSelect([worker])
     this.onWorkerClick()
+
+    if (window.innerWidth <= 960) {
+      this.showWorkers = false
+    }
   }
 
   onListSelect(selectedWorker: Worker[]) {
@@ -67,6 +72,9 @@ export class FlightsComponent implements OnInit {
 
   closeSidenav() {
     this.sidenav.close()
+    if (window.innerWidth <= 960) {
+      this.showWorkers = true
+    }
   }
 
 }
