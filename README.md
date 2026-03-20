@@ -58,19 +58,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Toolbar
 - Button Toggle Group
-- Table
+- Button
+- Card
+- Clipboard
 - Dialog
-- Menu
 - Expansion Panel
+- Form Field
+- Icon
+- Input
+- List
+- Menu
+- Progress spinner
 - Selection List
 - Sidenav
-- Clipboard
-- Card
 - Slide toggle
-- Progress spinner
-- Input
-- Button
-- Icon
+- Snackbar
+- Table
 
 ## Changelog
 
