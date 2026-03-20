@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { ReportersService } from './../services/reporters.service'
 import { Reporter } from './../interfaces/reporter'
 import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { TranslocoService } from '@ngneat/transloco'
 import { ReportersDialogComponent } from './reporters-dialog/reporters-dialog.component'
 
 @Component({
@@ -26,7 +28,9 @@ export class ReportersComponent implements OnInit {
 
   constructor(
     private reportersService: ReportersService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar,
+    private transloco: TranslocoService
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +53,6 @@ export class ReportersComponent implements OnInit {
   }
 
   onClick(reporter: Reporter) {
-
     this.reporter = reporter
 
     if (this.isChecked) {
@@ -59,6 +62,16 @@ export class ReportersComponent implements OnInit {
           reporter: { ...reporter },
           headings: this.headings
         }
+      })
+    } else {
+      const message = this.transloco.translate('detailsShown')
+      const action = this.transloco.translate('close')
+      this.snackBar.open(message, action, {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+        panelClass: 'snackbar-success',
+        politeness: 'assertive'
       })
     }
   }

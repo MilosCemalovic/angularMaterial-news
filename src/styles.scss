@@ -89,3 +89,46 @@ mat-spinner {
     display: block !important;
   }
 }
+
+/* SNACKBAR STYLES - Override Material defaults */
+div.mat-mdc-snack-bar-container,
+.mat-mdc-snack-bar-container,
+.mdc-snackbar {
+  --mdc-snackbar-container-color: #4caf50 !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+}
+
+.mat-mdc-snack-bar-container.snackbar-success,
+.mat-mdc-snack-bar-container.snackbar-success .mdc-snackbar__surface,
+.mat-mdc-snack-bar-container.snackbar-success.mdc-snackbar,
+div.snackbar-success,
+.snackbar-success {
+  background: linear-gradient(135deg, #4caf50, #8bc34a) !important;
+  background-color: #4caf50 !important;
+}
+
+.mat-mdc-snack-bar-container.snackbar-success .mdc-snackbar__surface,
+.snackbar-success .mdc-snackbar__surface {
+  background: linear-gradient(135deg, #4caf50, #8bc34a) !important;
+  background-color: #4caf50 !important;
+}
+
+.mat-mdc-snack-bar-container.snackbar-success .mdc-snackbar__label,
+.snackbar-success .mdc-snackbar__label,
+.mat-mdc-snack-bar-container.snackbar-success .mat-mdc-snack-bar-label,
+.snackbar-success .mat-mdc-snack-bar-label {
+  color: white !important;
+}
+
+.mat-mdc-snack-bar-container.snackbar-success .mat-mdc-button,
+.mat-mdc-snack-bar-container.snackbar-success button,
+.snackbar-success .mat-mdc-button,
+.snackbar-success button,
+.mat-mdc-snack-bar-container .mat-mdc-button,
+.mat-mdc-snack-bar-container button {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 0.4rem !important;
+  margin-left: 1rem !important;
+}

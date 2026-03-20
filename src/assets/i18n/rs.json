@@ -38,5 +38,7 @@
   "to_gate":"Do izlaza",
   "copyNum": "Kopiraj broj",
   "pageNotFound": "Stranica nije pronađena",
-  "goHome": "Vrati se na početnu"
+  "goHome": "Vrati se na početnu",
+  "detailsShown": "Detalji su prikazani ispod tabele",
+  "close": "Zatvori"
 }

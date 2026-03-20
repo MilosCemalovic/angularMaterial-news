@@ -38,5 +38,7 @@
   "to_gate":"To gate",
   "copyNum": "Copy number",
   "pageNotFound": "Page not found",
-  "goHome": "Go Home"
+  "goHome": "Go Home",
+  "detailsShown": "Details shown below the table",
+  "close": "Close"
 }
