@@ -22,11 +22,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - User is getting data from APIs and mock data
 - Navigation is displayed via Angular Material Toolbar
-- User is able to switch between 2 News categories via Angular Material Tabs
+- User is able to switch between 2 News categories via Angular Material Button Toggle Group
 - News articles contain: title, description, author, date of publish, image (if has one) and URL to original post
 - User is able to search News articles by keywords via custom FilterPipe (replacement for Ng2 Search Filter)
 - News articles are filtered by language & category
-- News articles can be sorted - ASC or DESC
+- News articles can be sorted - ASC or DESC (manual refresh required to fetch new data)
 - News articles are displayed via Angular Material Card
 - Original News articles can be seen via Angular Material Button
 - User can view Reporters via Angular Material Table & Dialog on large screens and it's details via Angular Material Expansion Panel on mobile screens
@@ -35,9 +35,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - User can view Worker Flights via Angular Material Sidenav and Angular Material Card
 - User can copy Worker Flights number via Clipboard
 - Worker Flights are modified with custom and build-in Angular pipes
-- User can switch between English and Serbian laguage via Angular Material Menu
+- User can switch between English and Serbian language via Angular Material Menu
 - Content is translated via Transloco Service
 - Project is using Angular Flex Layout and custom styles
+- Full-page background images with semi-transparent content cards
+- Mobile preview toggle on desktop for testing responsive design
 
 ## Project is using APIs from
 
@@ -55,7 +57,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Installed Angular Material components
 
 - Toolbar
-- Tabs
+- Button Toggle Group
 - Table
 - Dialog
 - Menu
@@ -78,3 +80,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Replaced Ng2 Search Filter with custom FilterPipe
 - Updated TypeScript target to ES2022
 - Fixed zone.js import compatibility
+- Replaced Tabs with Button Toggle Group for better UX
+- Added full-page background images to News, Reporters, Flights pages
+- Fixed Mixed Content error (http → https for Netlify)
+- Added manual refresh button for news to save API calls
+- Changed navigation order: Reporters → Flights → News
+- Changed default home page to Reporters
+- Added mobile preview toggle button for desktop users
+- Changed reporters background image to microphone/recording studio
+- Fixed media query breakpoint (96rem → 960px)
+- Increased icon sizes throughout the app
+- Set base font-size to 10px (1rem = 10px)
+- Created shared SCSS mixins for DRY styling
+- Added larger card sizes (30rem) and title fonts (2.2rem)
