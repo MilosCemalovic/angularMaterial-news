@@ -18,7 +18,6 @@ export class SerbianComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.getSerbian()
   }
 
   getSerbian() {

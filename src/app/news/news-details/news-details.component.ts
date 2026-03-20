@@ -13,6 +13,11 @@ export class NewsDetailsComponent {
   @Input() sort
 
   @Output() sortEmitter = new EventEmitter<string>()
+  @Output() refresh = new EventEmitter<void>()
+
+  refreshNews() {
+    this.refresh.emit()
+  }
 
   sortAsc() {
     this.sort = 'asc'

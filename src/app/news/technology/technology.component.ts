@@ -20,7 +20,6 @@ export class TechnologyComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getTechnology()
   }
 
   getTechnology() {
