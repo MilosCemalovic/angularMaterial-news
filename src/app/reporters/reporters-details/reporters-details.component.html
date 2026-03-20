@@ -1,7 +1,7 @@
 <ng-container *transloco="let translate">
   <h1 mat-dialog-title>{{translate('repDetails')}}</h1>
 
-  <div *ngIf="!loading" fxLayout="row" fxLayoutAlign="space-between">
+  <div *ngIf="!loading" fxLayout="row" fxLayoutAlign="space-between" class="details-container">
 
     <div>
       <p class="bold" *ngFor="let heading of headings"> {{translate(heading)}} </p>
