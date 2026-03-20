@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core'
-import { MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
 import { ReporterDetails } from 'src/app/interfaces/reporter-details'
 
 @Component({
@@ -9,6 +9,9 @@ import { ReporterDetails } from 'src/app/interfaces/reporter-details'
 })
 export class ReportersDialogComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: ReporterDetails) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: ReporterDetails,
+    public dialogRef: MatDialogRef<ReportersDialogComponent>
+  ) { }
 
 }

@@ -1,6 +1,15 @@
-<app-reporters-details [reporter]="data.reporter" [headings]="data.headings" style="font-size: large;">
-</app-reporters-details>
+<div class="dialog-header" *transloco="let translate">
+  <h2>
+    <mat-icon>person</mat-icon>
+    {{translate('repDetails')}}
+  </h2>
+</div>
 
-<mat-dialog-actions align="end">
+<div class="dialog-content">
+  <app-reporters-details [reporter]="data.reporter" [headings]="data.headings" style="font-size: large;">
+  </app-reporters-details>
+</div>
+
+<mat-dialog-actions align="end" style="margin: 0 2rem 0.5rem 0;">
   <button mat-stroked-button mat-dialog-close color="accent">{{'exit'|transloco}}</button>
 </mat-dialog-actions>
