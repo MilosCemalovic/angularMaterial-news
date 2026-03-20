@@ -1,13 +1,19 @@
 <ng-container *transloco="let translate">
-  <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <div class="controls-row search-row" fxLayout="row wrap" fxLayoutAlign="space-between center">
     <mat-form-field class="mt-md">
       <input matInput type="text" [(ngModel)]="term" placeholder="{{translate('search')}}">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-    <div class="news-controls">
+  </div>
+
+  <div class="controls-row buttons-row" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div class="news-controls refresh-wrapper">
       <button class="ml-md" mat-flat-button color="primary" (click)="refreshNews()">
         <mat-icon>refresh</mat-icon>
+        <span class="btn-text">{{translate('getNewestNews')}}</span>
       </button>
+    </div>
+    <div class="news-controls arrows-wrapper">
       <button class="ml-md" mat-flat-button color="primary" (click)="sortAsc()">
         <mat-icon>arrow_upward</mat-icon>
       </button>

@@ -40,5 +40,6 @@
   "pageNotFound": "Page not found",
   "goHome": "Go Home",
   "detailsShown": "Details shown below the table",
-  "close": "Close"
+  "close": "Close",
+  "getNewestNews": "Get newest news"
 }
