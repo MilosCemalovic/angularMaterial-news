@@ -1,5 +1,43 @@
-.details-container {
-  background-color: #fff;
+.details-card {
+  background: linear-gradient(135deg, #fff, #fffbf7);
+  border-radius: 1.2rem;
   padding: 2rem;
-  border-radius: 0.8rem;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+  border-left: 0.4rem solid #ff9f43;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .label {
+    color: #666;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    mat-icon {
+      font-size: 1.4rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      color: #ff9f43;
+    }
+  }
+
+  .value {
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: right;
+    word-break: break-word;
+    max-width: 60%;
+  }
 }
