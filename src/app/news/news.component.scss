@@ -9,14 +9,14 @@
     @include content-card;
     
     .mat-tab-header {
-      background: rgba(255, 255, 255, 0.95);
+      background: linear-gradient(135deg, #2c3e50, #34495e);
       border-radius: 0.8rem 0.8rem 0 0;
     }
 
     .mat-tab-label {
-      color: #333;
+      color: #fff;
       font-weight: 500;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       
       &.mat-tab-label-active {
         color: #ff6b6b;
