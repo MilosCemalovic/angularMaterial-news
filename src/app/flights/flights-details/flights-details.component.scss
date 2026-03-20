@@ -1,4 +1,137 @@
-.card {
-  width: 20rem;
+.flights-container {
+  background: linear-gradient(180deg, #f0f8ff, #e3f2fd);
+  min-height: 100%;
+  padding: 1.5rem;
+}
+
+.flights-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #00cec9;
+
+  h2 {
+    margin: 0;
+    color: #0984e3;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    mat-icon {
+      font-size: 2rem;
+      width: 2rem;
+      height: 2rem;
+      color: #00cec9;
+    }
+  }
+
+  .close-btn {
+    color: #666;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+
+    &:hover {
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    mat-icon {
+      font-size: 1.8rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}
+
+.flight-card {
+  background: linear-gradient(135deg, #fff, #f8fbff);
+  border-radius: 1.2rem;
   padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+  border-left: 0.4rem solid #00cec9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.6rem 2.5rem rgba(0, 0, 0, 0.15);
+  }
+
+  .flight-number {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #ddd;
+
+    .label {
+      color: #666;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+
+    .value {
+      color: #0984e3;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .flight-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      .label {
+        color: #888;
+        font-size: 0.85rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        mat-icon {
+          font-size: 1.2rem;
+          width: 1.2rem;
+          height: 1.2rem;
+          color: #00cec9;
+        }
+      }
+
+      .value {
+        color: #333;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .copy-btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #00cec9, #0984e3);
+    border-radius: 0.8rem;
+
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, #00b5b0, #0870c0);
+    }
+  }
 }

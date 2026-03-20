@@ -1,33 +1,90 @@
-<div fxLayout="column" *transloco="let translate">
+<div class="flights-container" *transloco="let translate">
 
-  <button mat-icon-button color="primary" (click)="close()" fxFlexAlign="end" class="m-md">
-    <mat-icon>close</mat-icon>
-  </button>
+  <div class="flights-header">
+    <h2>
+      <mat-icon>flight</mat-icon>
+      {{translate('workerFlights')}}
+    </h2>
+    <button mat-icon-button (click)="close()" class="close-btn">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
 
-  <div *ngFor="let selectedWorkerFlight of selectedWorkerFlights" fxLayout="column" fxLayoutAlign="center center"
-    class="m-lg">
+  <div *ngFor="let selectedWorkerFlight of selectedWorkerFlights" class="flight-card">
 
-    <mat-card class="card">
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>
-          <p *ngFor="let heading of headings" class="bold"> {{translate(heading)|uppercase}} </p>
-        </div>
+    <div class="flight-number">
+      <div class="label">{{translate('num')}}</div>
+      <div class="value">{{selectedWorkerFlight.num}}</div>
+    </div>
 
-        <div class="text-right">
-          <p> {{selectedWorkerFlight.num}} </p>
-          <p> {{selectedWorkerFlight.from}} </p>
-          <p> {{selectedWorkerFlight.to}} </p>
-          <p> {{selectedWorkerFlight.from_date|date}} </p>
-          <p> {{selectedWorkerFlight.to_date|date}} </p>
-          <p> {{selectedWorkerFlight.plane}} </p>
-          <p> {{selectedWorkerFlight.duration|time}} </p>
-          <p> {{selectedWorkerFlight.from_gate}} </p>
-          <p> {{selectedWorkerFlight.to_gate}} </p>
-        </div>
+    <div class="flight-details">
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>flight_takeoff</mat-icon>
+          {{translate('from')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.from}}</span>
       </div>
-    </mat-card>
 
-    <button mat-flat-button color="accent" [cdkCopyToClipboard]="selectedWorkerFlight.num" class="mt-md">
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>flight_land</mat-icon>
+          {{translate('to')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.to}}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>calendar_today</mat-icon>
+          {{translate('from_date')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.from_date | date: 'MMM dd, yyyy'}}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>event</mat-icon>
+          {{translate('to_date')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.to_date | date: 'MMM dd, yyyy'}}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>airplanemode_active</mat-icon>
+          {{translate('plane')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.plane}}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>schedule</mat-icon>
+          {{translate('duration')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.duration | date: 'HH:mm'}}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>meeting_room</mat-icon>
+          {{translate('from_gate')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.from_gate}}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">
+          <mat-icon>door_front</mat-icon>
+          {{translate('to_gate')}}
+        </span>
+        <span class="value">{{selectedWorkerFlight.to_gate}}</span>
+      </div>
+    </div>
+
+    <button mat-flat-button color="primary" [cdkCopyToClipboard]="selectedWorkerFlight.num" class="copy-btn">
+      <mat-icon>content_copy</mat-icon>
       {{translate('copyNum')}}
     </button>
   </div>
