@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { MatCardModule } from '@angular/material/card'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
-import { MatTabsModule } from '@angular/material/tabs'
 import { MatInputModule } from '@angular/material/input'
 import { MatTableModule } from '@angular/material/table'
 import { MatDialogModule } from '@angular/material/dialog'
@@ -37,7 +36,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     MatIconModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatTabsModule,
     MatInputModule,
     MatTableModule,
     MatDialogModule,
