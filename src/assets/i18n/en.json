@@ -36,5 +36,7 @@
   "duration": "Duration",
   "from_gate": "From gate",
   "to_gate":"To gate",
-  "copyNum": "Copy number"
+  "copyNum": "Copy number",
+  "pageNotFound": "Page not found",
+  "goHome": "Go Home"
 }

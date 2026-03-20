@@ -36,5 +36,7 @@
   "duration": "Trajanje",
   "from_gate": "Od izlaza",
   "to_gate":"Do izlaza",
-  "copyNum": "Kopiraj broj"
+  "copyNum": "Kopiraj broj",
+  "pageNotFound": "Stranica nije pronađena",
+  "goHome": "Vrati se na početnu"
 }
