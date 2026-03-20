@@ -78,5 +78,3 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Replaced Ng2 Search Filter with custom FilterPipe
 - Updated TypeScript target to ES2022
 - Fixed zone.js import compatibility
-
-## There is the same project in PrimeNG on this GitHub account
