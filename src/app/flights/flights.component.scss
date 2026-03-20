@@ -7,23 +7,162 @@
 .container {
   background-color: transparent;
   height: 80vh;
+  overflow-x: hidden;
+}
+
+.click-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #00cec9, #0984e3);
+  border-radius: 1.2rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 206, 201, 0.4);
+  animation: pulse 2s infinite;
+
+  mat-icon {
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+.workers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: hidden;
+  max-width: 100%;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.worker-card {
+  display: flex;
+  align-items: center;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #fff, #f8fbff);
+  border-radius: 1.4rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
+  border-left: 0.5rem solid #00cec9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.18);
+    background: linear-gradient(135deg, #fff, #e3f2fd);
+  }
+
+  .worker-avatar {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00cec9, #0984e3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    mat-icon {
+      font-size: 3.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      color: white;
+    }
+  }
+
+  .worker-info {
+    flex: 1;
+    padding: 0 1.5rem;
+    overflow: hidden;
+
+    h3 {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #333;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .worker-company {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      color: #666;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      mat-icon {
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #00cec9;
+      }
+    }
+  }
+
+  .arrow-icon {
+    color: #00cec9;
+    font-size: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
 ::ng-deep {
   .mat-sidenav {
     background: linear-gradient(180deg, #f0f8ff, #e8f4fd);
-  }
+    width: 50%;
+    max-width: 50%;
 
-  .mat-selection-list {
-    @include content-card;
-  }
-
-  .mat-list-option {
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #e3f2fd !important;
-      transform: translateX(0.5rem);
+    @media (max-width: 960px) {
+      width: 90%;
+      max-width: 90%;
     }
+  }
+
+  .mat-sidenav-container {
+    overflow-x: hidden;
+  }
+
+  .mat-sidenav-content {
+    overflow-x: hidden;
+  }
+
+  .mat-drawer-content {
+    overflow: hidden !important;
   }
 }

@@ -41,6 +41,12 @@ export class FlightsComponent implements OnInit {
     )
   }
 
+  selectWorker(worker: Worker) {
+    this.selectedWorker = [worker]
+    this.onListSelect([worker])
+    this.onWorkerClick()
+  }
+
   onListSelect(selectedWorker: Worker[]) {
     this.flightsService.getWorkerFlights(selectedWorker[0].id).subscribe(
       (workerFlights: WorkerFlight[]) => {

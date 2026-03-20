@@ -11,11 +11,12 @@ import { Worker } from './../interfaces/worker'
 export class FlightsService {
 
   private mockWorkers: Worker[] = [
-    { id: 1, name: 'John Smith' },
-    { id: 2, name: 'Sarah Johnson' },
-    { id: 3, name: 'Michael Brown' },
-    { id: 4, name: 'Emily Davis' },
-    { id: 5, name: 'David Wilson' }
+    { id: 1, name: 'John Smith', company: { name: 'Tech Corp', icon: 'computer' } },
+    { id: 2, name: 'Sarah Johnson', company: { name: 'Innovate Inc', icon: 'lightbulb' } },
+    { id: 3, name: 'Michael Brown', company: { name: 'Global Solutions', icon: 'public' } },
+    { id: 4, name: 'Emily Davis', company: { name: 'Creative Agency', icon: 'palette' } },
+    { id: 5, name: 'David Wilson', company: { name: 'Future Systems', icon: 'memory' } },
+    { id: 6, name: 'Lisa Anderson', company: { name: 'Finance Hub', icon: 'account_balance' } }
   ]
 
   private mockFlights: { [key: number]: WorkerFlight[] } = {
@@ -41,6 +42,10 @@ export class FlightsService {
       { num: 'AA902', from: 'Miami (MIA)', to: 'Dallas (DFW)', from_date: '2026-05-10T13:00:00', to_date: '2026-05-10T15:00:00', plane: 'Airbus A321', duration: 120, from_gate: 11, to_gate: 7 },
       { num: 'SW703', from: 'Dallas (DFW)', to: 'Phoenix (PHX)', from_date: '2026-05-10T17:00:00', to_date: '2026-05-10T18:00:00', plane: 'Boeing 737', duration: 120, from_gate: 14, to_gate: 9 },
       { num: 'AS804', from: 'Phoenix (PHX)', to: 'Seattle (SEA)', from_date: '2026-05-12T08:00:00', to_date: '2026-05-12T10:30:00', plane: 'Airbus A320', duration: 150, from_gate: 5, to_gate: 12 }
+    ],
+    6: [
+      { num: 'LH401', from: 'Frankfurt (FRA)', to: 'New York (JFK)', from_date: '2026-06-01T10:00:00', to_date: '2026-06-01T13:00:00', plane: 'Airbus A340', duration: 480, from_gate: 20, to_gate: 15 },
+      { num: 'LH402', from: 'New York (JFK)', to: 'Frankfurt (FRA)', from_date: '2026-06-05T16:00:00', to_date: '2026-06-06T06:00:00', plane: 'Airbus A340', duration: 480, from_gate: 18, to_gate: 22 }
     ]
   }
 

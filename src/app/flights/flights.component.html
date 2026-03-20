@@ -9,24 +9,33 @@
 
   <mat-sidenav-container class="container" *transloco="let translate">
 
-    <mat-sidenav #sidenav [autoFocus]="false">
+    <mat-sidenav #sidenav mode="side" class="flights-sidenav" [autoFocus]="false">
       <app-flights-details [selectedWorkerFlights]="selectedWorkerFlights" (closeEmitter)="closeSidenav()">
       </app-flights-details>
     </mat-sidenav>
 
     <mat-sidenav-content>
 
-      <p class="text-center">{{translate('clickDetails')}}</p>
+      <div class="click-hint" *transloco="let translate">
+        <mat-icon>touch_app</mat-icon>
+        {{translate('clickDetails')}}
+      </div>
 
-      <mat-selection-list *ngIf="!loading" [multiple]="false" [(ngModel)]="selectedWorker"
-        (ngModelChange)="onListSelect(selectedWorker)" class="m-lg mat-elevation-z2 content-card">
-
-        <!-- <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="sidenav.open()"> -->
-        <mat-list-option *ngFor="let worker of workers" [value]="worker" (click)="onWorkerClick()">
-          {{worker.name}}
-        </mat-list-option>
-
-      </mat-selection-list>
+      <div *ngIf="!loading" class="workers-grid content-card">
+        <div *ngFor="let worker of workers" class="worker-card" (click)="selectWorker(worker)">
+          <div class="worker-avatar">
+            <mat-icon>person</mat-icon>
+          </div>
+          <div class="worker-info">
+            <h3>{{worker.name}}</h3>
+            <p class="worker-company">
+              <mat-icon>{{worker.company.icon}}</mat-icon>
+              {{worker.company.name}}
+            </p>
+          </div>
+          <mat-icon class="arrow-icon">chevron_right</mat-icon>
+        </div>
+      </div>
 
     </mat-sidenav-content>
 
