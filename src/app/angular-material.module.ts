@@ -20,6 +20,7 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { ClipboardModule } from '@angular/cdk/clipboard'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle'
     MatSidenavModule,
     ClipboardModule,
     MatSlideToggleModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSnackBarModule
   ]
 })
 export class AngularMaterialModule {}
