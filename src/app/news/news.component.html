@@ -7,15 +7,21 @@
     <div class="divider"></div>
   </div>
 
-  <div class="m-lg" *transloco="let translate">
-    <mat-tab-group>
-      <mat-tab label="{{translate('technology')}}">
-        <app-technology></app-technology>
-      </mat-tab>
+  <div class="m-lg content-card" *transloco="let translate">
+    <mat-button-toggle-group [(value)]="selectedNews" class="news-toggle">
+      <mat-button-toggle value="technology">
+        <mat-icon>computer</mat-icon>
+        {{translate('technology')}}
+      </mat-button-toggle>
+      <mat-button-toggle value="serbian">
+        <mat-icon>public</mat-icon>
+        {{translate('serbian')}}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
 
-      <mat-tab label="{{translate('serbian')}}">
-        <app-serbian></app-serbian>
-      </mat-tab>
-    </mat-tab-group>
+    <div class="news-content">
+      <app-technology *ngIf="selectedNews === 'technology'"></app-technology>
+      <app-serbian *ngIf="selectedNews === 'serbian'"></app-serbian>
+    </div>
   </div>
 </div>

@@ -6,4 +6,5 @@ import { Component } from '@angular/core'
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent {
+  selectedNews = 'technology'
 }
