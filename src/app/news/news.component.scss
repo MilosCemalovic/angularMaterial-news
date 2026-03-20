@@ -8,6 +8,16 @@
   .page-container {
     padding: 1rem !important;
   }
+
+  .news-toggle {
+    width: 100%;
+    flex-direction: column;
+
+    .mat-button-toggle {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 }
 
 ::ng-deep {
@@ -25,6 +35,7 @@
   }
 
   .mat-button-toggle-group {
+    display: flex !important;
     border: none;
     border-radius: 3rem;
     overflow: hidden;
@@ -37,15 +48,28 @@
       font-weight: 500;
       padding: 0 2.5rem;
       transition: all 0.3s ease;
+      flex: 1;
 
       &:hover {
         background: #ececec;
       }
 
       &.mat-button-toggle-checked {
-        background: #ff6b6b;
+        background: #ff6b6b !important;
         color: #fff;
         font-weight: 600;
+      }
+
+      .mat-button-toggle-button {
+        width: 100% !important;
+      }
+
+      .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after {
+        display: none !important;
+      }
+
+      .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after {
+        display: none !important;
       }
 
       mat-icon {
