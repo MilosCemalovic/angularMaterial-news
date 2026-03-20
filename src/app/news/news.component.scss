@@ -1,7 +1,13 @@
-@import '../shared/styles/page-backgrounds';
+@import '../../styles';
 
 .page-container {
   @include page-background('/assets/news-bg.jpg');
+}
+
+@media (max-width: 960px) {
+  .page-container {
+    padding: 1rem !important;
+  }
 }
 
 ::ng-deep {
