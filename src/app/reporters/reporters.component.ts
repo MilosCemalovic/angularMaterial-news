@@ -22,7 +22,7 @@ export class ReportersComponent implements OnInit {
   reporter: Reporter
   showMobilePreview = false
 
-  toggleMobilePreview() {
+  toggleMobilePreview () {
     this.showMobilePreview = !this.showMobilePreview
   }
 
@@ -31,13 +31,13 @@ export class ReportersComponent implements OnInit {
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
     private transloco: TranslocoService
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit (): void {
     this.getReportersFromService()
   }
 
-  getReportersFromService() {
+  getReportersFromService () {
     this.loading = true
     this.reportersService.getReporters().subscribe(
       (reporters: Reporter[]) => {
@@ -52,12 +52,12 @@ export class ReportersComponent implements OnInit {
     )
   }
 
-  onClick(reporter: Reporter) {
+  onClick (reporter: Reporter) {
     this.reporter = reporter
 
     if (this.isChecked) {
       this.dialog.open(ReportersDialogComponent, {
-        width: '90%',
+        width: '40%',
         data: {
           reporter: { ...reporter },
           headings: this.headings
